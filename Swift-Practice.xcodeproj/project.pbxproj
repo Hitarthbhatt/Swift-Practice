@@ -14,18 +14,18 @@
 		76F28AAA2F900000000BF1D3 /* Exceptions for "Swift-Practice" folder in "Swift-Practice" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"Topic1_UINavigation/CLAUDE.md",
-				"Topic2_ConcurrencyBinding/CLAUDE.md",
-				"Topic3_Networking/CLAUDE.md",
-				"Topic4_RealtimeNetworking/CLAUDE.md",
-				"Topic5_DataRaces/CLAUDE.md",
-				"Topic6_LRUCache/CLAUDE.md",
-				"Topic7_ConcurrentImageLoader/CLAUDE.md",
-				"Topic8_NetworkResilience/CLAUDE.md",
-				"Topic9_InfiniteImageFeed/CLAUDE.md",
-				"Topic10_OfflineSync/CLAUDE.md",
-				"Topic10_OfflineSync/Queueing/CLAUDE.md",
-				"Topic10_OfflineSync/AudioStreaming/CLAUDE.md",
+				Topic1_UINavigation/CLAUDE.md,
+				Topic2_ConcurrencyBinding/CLAUDE.md,
+				Topic3_Networking/CLAUDE.md,
+				Topic4_RealtimeNetworking/CLAUDE.md,
+				Topic5_DataRaces/CLAUDE.md,
+				Topic6_LRUCache/CLAUDE.md,
+				Topic7_ConcurrentImageLoader/CLAUDE.md,
+				Topic8_NetworkResilience/CLAUDE.md,
+				Topic9_InfiniteImageFeed/CLAUDE.md,
+				Topic10_OfflineSync/CLAUDE.md,
+				Topic10_OfflineSync/Queueing/CLAUDE.md,
+				Topic11_AudioStreaming/CLAUDE.md,
 			);
 			target = 76F28A4F2F823EE2000BF1D3 /* Swift-Practice */;
 		};

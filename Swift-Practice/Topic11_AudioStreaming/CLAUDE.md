@@ -1,4 +1,4 @@
-# Topic 10 — HLS Audio Streaming
+# Topic 11 — HLS Audio Streaming
 
 Basic HLS audio player. AVPlayer + master playlist ABR. Quality cap via `preferredPeakBitRate`.
 

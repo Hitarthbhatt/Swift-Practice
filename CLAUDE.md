@@ -24,6 +24,7 @@ Topic-by-topic iOS system design for senior/staff interview prep. Based on Andre
 - `Swift-Practice/Topic8_NetworkResilience/CLAUDE.md`
 - `Swift-Practice/Topic9_InfiniteImageFeed/CLAUDE.md`
 - `Swift-Practice/Topic10_OfflineSync/CLAUDE.md` (+ `Queueing/CLAUDE.md`)
+- `Swift-Practice/Topic11_AudioStreaming/CLAUDE.md`
 
 ## Progress
 - ✅ Topic 1: Mobile Domain
@@ -42,8 +43,9 @@ Topic-by-topic iOS system design for senior/staff interview prep. Based on Andre
   - ⬜ Batched Requests
   - ⬜ Resumable Uploads / Downloads
   - ⬜ Prefetching
-- ⬜ Topic 11: Interview Strategy
+- ✅ Topic 11: Audio Streaming (HLS, AVPlayer, multi-bitrate, play/pause/next/prev/seek)
+- ⬜ Topic 12: Interview Strategy
 
 ## Remaining topics (from mind map)
 **3** (partial): GraphQL, gRPC, Pagination, Long-Polling
-**11**: Interview strategy, C4 Model, trade-offs
+**12**: Interview strategy, C4 Model, trade-offs
