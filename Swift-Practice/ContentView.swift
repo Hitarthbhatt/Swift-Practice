@@ -103,6 +103,12 @@ struct ContentView: View {
                     }
                 }
 
+                Section("Topic 11: Audio Streaming (HLS)") {
+                    NavigationLink("HLS Audio Player") {
+                        AudioStreamingDemoView()
+                    }
+                }
+
             }
             .navigationTitle("iOS System Design")
         }
