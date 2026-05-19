@@ -39,8 +39,10 @@ final class ImageLoaderViewModel {
                 states[url] = .loaded(image)
             } catch is CancellationError {
                 states[url] = .cancelled
-            } catch is ImageLoaderError {
+            } catch ImageLoaderError.cancelled {
                 states[url] = .cancelled
+            } catch ImageLoaderError.failed {
+                states[url] = .failed
             } catch {
                 states[url] = .failed
             }

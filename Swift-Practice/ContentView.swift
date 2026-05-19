@@ -109,6 +109,12 @@ struct ContentView: View {
                     }
                 }
 
+                Section("Topic 12: Network Interceptor") {
+                    NavigationLink("Adapter · Retrier · Observer chain") {
+                        NetworkInterceptorDemoView()
+                    }
+                }
+
             }
             .navigationTitle("iOS System Design")
         }

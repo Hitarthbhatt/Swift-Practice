@@ -25,6 +25,7 @@ Topic-by-topic iOS system design for senior/staff interview prep. Based on Andre
 - `Swift-Practice/Topic9_InfiniteImageFeed/CLAUDE.md`
 - `Swift-Practice/Topic10_OfflineSync/CLAUDE.md` (+ `Queueing/CLAUDE.md`)
 - `Swift-Practice/Topic11_AudioStreaming/CLAUDE.md`
+- `Swift-Practice/Topic12_NetworkInterceptor/CLAUDE.md`
 
 ## Progress
 - ✅ Topic 1: Mobile Domain
