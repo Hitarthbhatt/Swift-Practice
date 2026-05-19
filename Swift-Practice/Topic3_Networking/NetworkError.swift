@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - Shared Network Types
 
-enum NetworkError: LocalizedError {
+enum NetworkError: Error, LocalizedError {
     case invalidURL
     case invalidResponse
     case httpError(statusCode: Int, data: Data?)
@@ -10,6 +10,9 @@ enum NetworkError: LocalizedError {
     case noData
     case cancelled
     case unknown(Error)
+    case unacceptableStatusCode(Int)
+    case retryLimitExceeded
+    case unauthorized
 
     var errorDescription: String? {
         switch self {
@@ -20,6 +23,9 @@ enum NetworkError: LocalizedError {
         case .noData: "No data"
         case .cancelled: "Request cancelled"
         case .unknown(let error): error.localizedDescription
+        case .unacceptableStatusCode(let code): "HTTP \(code)"
+        case .retryLimitExceeded: "Retry limit exceeded"
+        case .unauthorized: "Unauthorized — refresh failed"
         }
     }
 }

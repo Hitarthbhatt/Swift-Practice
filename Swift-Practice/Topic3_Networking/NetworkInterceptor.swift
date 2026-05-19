@@ -1,25 +1,12 @@
 import Foundation
 
-// MARK: - Response & Error
+// MARK: - Response
+// NetworkError is shared with Topic 3 (defined in Topic3_Networking/NetworkError.swift).
 
 struct NetworkResponse: Sendable {
     let request: URLRequest
     let response: HTTPURLResponse
     let data: Data
-}
-
-enum NetworkError: Error, LocalizedError {
-    case unacceptableStatusCode(Int)
-    case retryLimitExceeded
-    case unauthorized
-
-    var errorDescription: String? {
-        switch self {
-        case .unacceptableStatusCode(let code): return "HTTP \(code)"
-        case .retryLimitExceeded:               return "Retry limit exceeded"
-        case .unauthorized:                     return "Unauthorized — refresh failed"
-        }
-    }
 }
 
 // MARK: - Adapter (mutate request before send)

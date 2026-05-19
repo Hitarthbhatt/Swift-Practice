@@ -57,8 +57,7 @@ final class NetworkingDemoViewModel: ObservableObject {
 
         asyncClient = AsyncNetworkClient(
             baseURL: baseURL,
-            requestInterceptors: [LoggingInterceptor()],
-            responseInterceptors: [LoggingInterceptor()]
+            observers: [LoggingInterceptor()]
         )
 
         combineClient = CombineNetworkClient(baseURL: baseURL)

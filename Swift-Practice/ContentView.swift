@@ -47,6 +47,9 @@ struct ContentView: View {
                     NavigationLink("Network Clients Demo") {
                         NetworkingDemoView()
                     }
+                    NavigationLink("Interceptor Chain (Adapter · Retrier · Observer)") {
+                        NetworkInterceptorDemoView()
+                    }
                 }
 
                 Section("Topic 4: Realtime Networking") {
@@ -106,12 +109,6 @@ struct ContentView: View {
                 Section("Topic 11: Audio Streaming (HLS)") {
                     NavigationLink("HLS Audio Player") {
                         AudioStreamingDemoView()
-                    }
-                }
-
-                Section("Topic 12: Network Interceptor") {
-                    NavigationLink("Adapter · Retrier · Observer chain") {
-                        NetworkInterceptorDemoView()
                     }
                 }
 

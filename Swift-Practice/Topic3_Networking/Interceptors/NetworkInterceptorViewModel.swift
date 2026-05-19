@@ -62,7 +62,6 @@ final class NetworkInterceptorViewModel {
 
     deinit {
         logContinuation.finish()
-        logPump?.cancel()
     }
 
     func sendRequest() async {
