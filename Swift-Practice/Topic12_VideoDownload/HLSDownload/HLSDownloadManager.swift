@@ -31,6 +31,7 @@ final class HLSDownloadManager: NSObject {
     private lazy var session: AVAssetDownloadURLSession = {
         let config = URLSessionConfiguration.background(withIdentifier: Self.backgroundIdentifier)
         config.sessionSendsLaunchEvents = true
+        config.isDiscretionary = false   // download now, don't wait for "optimal" conditions
         return AVAssetDownloadURLSession(
             configuration: config,
             assetDownloadDelegate: self,
