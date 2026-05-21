@@ -76,23 +76,26 @@ final class VideoDownloadViewModel {
 }
 
 // MARK: - Demo catalog
-// Public sample MP4s used as stand-in "quality variants" (different files of
-// increasing size). In production each variant is the same content re-encoded.
+// Public sample MP4s (test-videos.co.uk) — each quality is a real re-encode of
+// the same clip at that resolution, so the picker maps to genuine bitrates.
 
 extension VideoDownloadViewModel {
     static let catalog: [VideoItem] = {
-        let bucket = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample"
-        func item(_ id: String, _ title: String, _ low: String, _ med: String, _ high: String) -> VideoItem {
-            VideoItem(id: id, title: title, variants: [
-                VideoVariant(quality: .low,    url: URL(string: "\(bucket)/\(low)")!),
-                VideoVariant(quality: .medium, url: URL(string: "\(bucket)/\(med)")!),
-                VideoVariant(quality: .high,   url: URL(string: "\(bucket)/\(high)")!),
+        // .../vids/<clip>/mp4/h264/<res>/<File>_<res>_10s_<size>MB.mp4
+        func item(_ id: String, _ title: String, _ clip: String, _ file: String) -> VideoItem {
+            func url(_ res: String, _ size: String) -> URL {
+                URL(string: "https://test-videos.co.uk/vids/\(clip)/mp4/h264/\(res)/\(file)_\(res)_10s_\(size)MB.mp4")!
+            }
+            return VideoItem(id: id, title: title, variants: [
+                VideoVariant(quality: .low,    url: url("360", "1")),
+                VideoVariant(quality: .medium, url: url("720", "2")),
+                VideoVariant(quality: .high,   url: url("1080", "5")),
             ])
         }
         return [
-            item("bbb", "Big Buck Bunny", "ForBiggerEscapes.mp4", "ForBiggerFun.mp4", "BigBuckBunny.mp4"),
-            item("elephant", "Elephants Dream", "ForBiggerBlazes.mp4", "ForBiggerJoyrides.mp4", "ElephantsDream.mp4"),
-            item("sintel", "Sintel Teaser", "ForBiggerMeltdowns.mp4", "TearsOfSteel.mp4", "Sintel.mp4"),
+            item("bbb", "Big Buck Bunny", "bigbuckbunny", "Big_Buck_Bunny"),
+            item("jellyfish", "Jellyfish", "jellyfish", "Jellyfish"),
+            item("sintel", "Sintel", "sintel", "Sintel"),
         ]
     }()
 }

@@ -173,6 +173,18 @@ extension VideoDownloadManager: URLSessionDownloadDelegate {
         // Synchronous — temp file at `location` is deleted when this returns.
         MainActor.assumeIsolated {
             guard let videoID = downloadTask.taskDescription else { return }
+
+            // A finished download is not a successful one — a 403/404 body still
+            // "finishes". Reject non-2xx so we never save an error page as video.
+            if let http = downloadTask.response as? HTTPURLResponse,
+               !(200...299).contains(http.statusCode) {
+                records[videoID]?.status = .failed
+                tasks[videoID] = nil
+                store.saveRecords(records)
+                onChange?()
+                return
+            }
+
             if let name = store.moveToCompleted(from: location, videoID: videoID) {
                 records[videoID]?.localFileName = name
                 records[videoID]?.status = .completed
