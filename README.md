@@ -31,7 +31,7 @@ Every topic is a self-contained Xcode group with its own demo view, view model, 
 | 9 | Performance — Infinite Feed | done | `UICollectionViewCompositionalLayout` + Diffable DS + prefetching, Clean Architecture |
 | 10 | Offline & Sync | partial | SwiftData persistent op queue, idempotency keys, crash recovery, dead-letter |
 | 11 | Audio Streaming | done | HLS, `AVPlayer`, multi-bitrate, play/pause/seek/next/prev |
-| 12 | Interview Strategy | todo | C4 model, trade-off framework |
+| 12 | Video Download | done | Background `URLSession` **+** `AVAssetDownload`, pause/resume, app-kill survival, progress, quality/bitrate, offline playback |
 
 ---
 
@@ -55,7 +55,9 @@ Swift-Practice/
 ├── Topic10_OfflineSync/
 │   └── Queueing/
 ├── Topic11_AudioStreaming/
-└── Topic12_*/                       # TBD
+└── Topic12_VideoDownload/
+    ├── BackgroundURLSession/        # URLSessionDownloadTask, resume data
+    └── HLSDownload/                 # AVAssetDownloadTask, offline bundle
 ```
 
 Every topic folder ships a `CLAUDE.md` — read that first. Each one summarises the design decisions, files, and interview talking points so you can pattern-match quickly.

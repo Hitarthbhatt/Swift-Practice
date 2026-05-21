@@ -112,6 +112,15 @@ struct ContentView: View {
                     }
                 }
 
+                Section("Topic 12: Video Download") {
+                    NavigationLink("Background URLSession Download") {
+                        VideoDownloadDemoView()
+                    }
+                    NavigationLink("HLS Offline Download (AVAssetDownload)") {
+                        HLSDownloadDemoView()
+                    }
+                }
+
             }
             .navigationTitle("iOS System Design")
         }

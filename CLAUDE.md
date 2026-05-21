@@ -16,7 +16,7 @@ Topic-by-topic iOS system design for senior/staff interview prep. Based on Andre
 ## Topic index
 - `Swift-Practice/Topic1_UINavigation/CLAUDE.md`
 - `Swift-Practice/Topic2_ConcurrencyBinding/CLAUDE.md`
-- `Swift-Practice/Topic3_Networking/CLAUDE.md`
+- `Swift-Practice/Topic3_Networking/CLAUDE.md` (+ `REST/`, `Interceptors/` subfolders)
 - `Swift-Practice/Topic4_RealtimeNetworking/CLAUDE.md`
 - `Swift-Practice/Topic5_DataRaces/CLAUDE.md`
 - `Swift-Practice/Topic6_LRUCache/CLAUDE.md`
@@ -25,7 +25,7 @@ Topic-by-topic iOS system design for senior/staff interview prep. Based on Andre
 - `Swift-Practice/Topic9_InfiniteImageFeed/CLAUDE.md`
 - `Swift-Practice/Topic10_OfflineSync/CLAUDE.md` (+ `Queueing/CLAUDE.md`)
 - `Swift-Practice/Topic11_AudioStreaming/CLAUDE.md`
-- `Swift-Practice/Topic12_NetworkInterceptor/CLAUDE.md`
+- `Swift-Practice/Topic12_VideoDownload/CLAUDE.md` (+ `BackgroundURLSession/`, `HLSDownload/` subfolders)
 
 ## Progress
 - ✅ Topic 1: Mobile Domain
@@ -45,8 +45,8 @@ Topic-by-topic iOS system design for senior/staff interview prep. Based on Andre
   - ⬜ Resumable Uploads / Downloads
   - ⬜ Prefetching
 - ✅ Topic 11: Audio Streaming (HLS, AVPlayer, multi-bitrate, play/pause/next/prev/seek)
-- ⬜ Topic 12: Interview Strategy
+- ✅ Topic 12: Video Download (background URLSession + AVAssetDownload, pause/resume, kill-survival, progress, quality/bitrate, offline playback)
 
 ## Remaining topics (from mind map)
 **3** (partial): GraphQL, gRPC, Pagination, Long-Polling
-**12**: Interview strategy, C4 Model, trade-offs
+**Interview strategy**: C4 Model, trade-offs
