@@ -39,6 +39,8 @@ enum HLSStatus: String, Codable {
 /// must be rebuilt from NSHomeDirectory() each time.
 struct HLSRecord: Codable {
     var assetID: String
+    var sourceURL: URL          // master .m3u8 — needed to recreate task on resume
+    var title: String
     var quality: HLSQuality
     var status: HLSStatus
     var percent: Double = 0

@@ -65,7 +65,16 @@ final class HLSDownloadManager: NSObject {
                 for case let task as AVAssetDownloadTask in sessionTasks {
                     guard let id = task.taskDescription else { continue }
                     self.tasks[id] = task
-                    if self.records[id]?.status != .completed {
+                    // Only mark live tasks downloading. Never resurrect paused /
+                    // completed records — a recovered task that's still around for
+                    // a paused record gets re-cancelled below.
+                    switch self.records[id]?.status {
+                    case .completed:
+                        break
+                    case .paused:
+                        task.cancel()
+                        self.tasks[id] = nil
+                    default:
                         self.records[id]?.status = .downloading
                     }
                 }
@@ -80,40 +89,55 @@ final class HLSDownloadManager: NSObject {
 
     func start(_ asset: HLSAsset, quality: HLSQuality) {
         if records[asset.id]?.status == .downloading { return }
-
-        let urlAsset = AVURLAsset(url: asset.url)
-        var options: [String: Any] = [:]
-        if let bitrate = quality.minimumBitrate {
-            options[AVAssetDownloadTaskMinimumRequiredMediaBitrateKey] = bitrate
-        }
-
-        guard let task = session.makeAssetDownloadTask(
-            asset: urlAsset,
-            assetTitle: asset.title,
-            assetArtworkData: nil,
-            options: options
-        ) else { return }
-
-        task.taskDescription = asset.id
-        tasks[asset.id] = task
-        records[asset.id] = HLSRecord(assetID: asset.id, quality: quality, status: .downloading)
-        task.resume()
+        records[asset.id] = HLSRecord(
+            assetID: asset.id,
+            sourceURL: asset.url,
+            title: asset.title,
+            quality: quality,
+            status: .downloading
+        )
+        spawnTask(for: asset.id)
         saveRecords()
         onChange?()
     }
 
+    // Pause = cancel. AVAssetDownloadTask.suspend() is NOT honored across app
+    // termination — the background daemon keeps downloading while the app is
+    // dead. Cancelling truly stops it; the partial bundle stays on disk so
+    // resume continues from there.
     func pause(_ assetID: String) {
-        tasks[assetID]?.suspend()
+        tasks[assetID]?.cancel()
+        tasks[assetID] = nil
         records[assetID]?.status = .paused
         saveRecords()
         onChange?()
     }
 
     func resume(_ assetID: String) {
-        tasks[assetID]?.resume()
+        guard records[assetID] != nil else { return }
         records[assetID]?.status = .downloading
+        spawnTask(for: assetID)   // new task continues from the retained partial
         saveRecords()
         onChange?()
+    }
+
+    /// Create + start an AVAssetDownloadTask from the persisted record.
+    private func spawnTask(for assetID: String) {
+        guard let rec = records[assetID] else { return }
+        let urlAsset = AVURLAsset(url: rec.sourceURL)
+        var options: [String: Any] = [:]
+        if let bitrate = rec.quality.minimumBitrate {
+            options[AVAssetDownloadTaskMinimumRequiredMediaBitrateKey] = bitrate
+        }
+        guard let task = session.makeAssetDownloadTask(
+            asset: urlAsset,
+            assetTitle: rec.title,
+            assetArtworkData: nil,
+            options: options
+        ) else { return }
+        task.taskDescription = assetID
+        tasks[assetID] = task
+        task.resume()
     }
 
     func remove(_ assetID: String) {
