@@ -121,6 +121,18 @@ struct ContentView: View {
                     }
                 }
 
+                Section("Topic 13: Design Patterns") {
+                    NavigationLink("Factory · Builder · Facade · Adapter · Observer · Strategy") {
+                        DesignPatternsView()
+                    }
+                }
+
+                Section("Topic 14: Testing") {
+                    NavigationLink("XCTest Patterns (in-app runner)") {
+                        TestingDemoView()
+                    }
+                }
+
             }
             .navigationTitle("iOS System Design")
         }

@@ -14,3 +14,5 @@ Persistent op queue surviving app kill. SwiftData-backed, per-entity FIFO, idemp
 - Idempotency key on each op → server-side dedup safe.
 - Crash-recovery: in-flight ops re-queued on launch.
 - Max retries → dead-letter; not retried.
+
+

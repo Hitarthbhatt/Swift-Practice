@@ -14,3 +14,4 @@ SwiftUI NavigationStack + UIKit interop + lifecycle + deep links + Coordinator p
 ## Conventions
 - iOS 16+ NavigationStack only. No `NavigationView`.
 - Routes = `Hashable` enums.
+

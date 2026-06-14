@@ -26,6 +26,8 @@ Topic-by-topic iOS system design for senior/staff interview prep. Based on Andre
 - `Swift-Practice/Topic10_OfflineSync/CLAUDE.md` (+ `Queueing/CLAUDE.md`)
 - `Swift-Practice/Topic11_AudioStreaming/CLAUDE.md`
 - `Swift-Practice/Topic12_VideoDownload/CLAUDE.md` (+ `BackgroundURLSession/`, `HLSDownload/` subfolders)
+- `Swift-Practice/Topic13_DesignPatterns/CLAUDE.md`
+- `Swift-Practice/Topic14_Testing/CLAUDE.md`
 
 ## Progress
 - ✅ Topic 1: Mobile Domain
@@ -46,6 +48,8 @@ Topic-by-topic iOS system design for senior/staff interview prep. Based on Andre
   - ⬜ Prefetching
 - ✅ Topic 11: Audio Streaming (HLS, AVPlayer, multi-bitrate, play/pause/next/prev/seek)
 - ✅ Topic 12: Video Download (background URLSession + AVAssetDownload, pause/resume, kill-survival, progress, quality/bitrate, offline playback)
+- ✅ Topic 13: Design Patterns (Factory, Builder, Facade, Adapter, Observer, Strategy — iOS scenarios, interactive)
+- ✅ Topic 14: Testing (in-app XCTest-style runner, DI, stub/spy mocks, async tests, AAA)
 
 ## Remaining topics (from mind map)
 **3** (partial): GraphQL, gRPC, Pagination, Long-Polling
