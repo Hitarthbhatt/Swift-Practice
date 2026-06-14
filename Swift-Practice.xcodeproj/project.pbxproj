@@ -29,6 +29,7 @@
 				Topic12_VideoDownload/CLAUDE.md,
 				Topic13_DesignPatterns/CLAUDE.md,
 				Topic14_Testing/CLAUDE.md,
+				Topic15_NetworkInterceptors/CLAUDE.md,
 			);
 			target = 76F28A4F2F823EE2000BF1D3 /* Swift-Practice */;
 		};

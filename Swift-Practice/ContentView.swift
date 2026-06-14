@@ -47,9 +47,6 @@ struct ContentView: View {
                     NavigationLink("Network Clients Demo") {
                         NetworkingDemoView()
                     }
-                    NavigationLink("Interceptor Chain (Adapter · Retrier · Observer)") {
-                        NetworkInterceptorDemoView()
-                    }
                 }
 
                 Section("Topic 4: Realtime Networking") {
@@ -130,6 +127,12 @@ struct ContentView: View {
                 Section("Topic 14: Testing") {
                     NavigationLink("XCTest Patterns (in-app runner)") {
                         TestingDemoView()
+                    }
+                }
+
+                Section("Topic 15: Network Interceptors") {
+                    NavigationLink("Auth · Retry (backoff+jitter) · Log") {
+                        NetworkInterceptorsView()
                     }
                 }
 
