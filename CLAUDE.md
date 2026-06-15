@@ -16,7 +16,7 @@ Topic-by-topic iOS system design for senior/staff interview prep. Based on Andre
 ## Topic index
 - `Swift-Practice/Topic1_UINavigation/CLAUDE.md`
 - `Swift-Practice/Topic2_ConcurrencyBinding/CLAUDE.md`
-- `Swift-Practice/Topic3_Networking/CLAUDE.md` (+ `REST/` subfolder)
+- `Swift-Practice/Topic3_Networking/CLAUDE.md` (+ `REST/`, `Interceptors/` subfolders)
 - `Swift-Practice/Topic4_RealtimeNetworking/CLAUDE.md`
 - `Swift-Practice/Topic5_DataRaces/CLAUDE.md`
 - `Swift-Practice/Topic6_LRUCache/CLAUDE.md`
@@ -28,12 +28,11 @@ Topic-by-topic iOS system design for senior/staff interview prep. Based on Andre
 - `Swift-Practice/Topic12_VideoDownload/CLAUDE.md` (+ `BackgroundURLSession/`, `HLSDownload/` subfolders)
 - `Swift-Practice/Topic13_DesignPatterns/CLAUDE.md`
 - `Swift-Practice/Topic14_Testing/CLAUDE.md`
-- `Swift-Practice/Topic15_NetworkInterceptors/CLAUDE.md`
 
 ## Progress
 - ✅ Topic 1: Mobile Domain
 - ✅ Topic 2: Concurrency & Data Binding
-- ✅ Topic 3: Networking (REST, async/await, Combine)
+- ✅ Topic 3: Networking (REST, async/await, Combine, interceptor chain — Auth/Retry/Log)
 - ✅ Topic 4: Realtime Networking (HTTP Polling, SSE, WebSockets, Push Notifications)
 - ✅ Topic 5: Data Races (Unprotected, SerialQueue, NSLock, Semaphore, Actor, @MainActor, @unchecked Sendable)
 - ✅ Topic 6: LRU Cache
@@ -51,7 +50,6 @@ Topic-by-topic iOS system design for senior/staff interview prep. Based on Andre
 - ✅ Topic 12: Video Download (background URLSession + AVAssetDownload, pause/resume, kill-survival, progress, quality/bitrate, offline playback)
 - ✅ Topic 13: Design Patterns (Factory, Builder, Facade, Adapter, Observer, Strategy — iOS scenarios, interactive)
 - ✅ Topic 14: Testing (in-app XCTest-style runner, DI, stub/spy mocks, async tests, AAA)
-- ✅ Topic 15: Network Interceptors (single-protocol chain — Auth, Retry w/ exp backoff+jitter, Log)
 
 ## Remaining topics (from mind map)
 **3** (partial): GraphQL, gRPC, Pagination, Long-Polling

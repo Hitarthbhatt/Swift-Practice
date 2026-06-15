@@ -1,6 +1,6 @@
-# Topic 15 — Network Interceptors (chain of responsibility)
+# Topic 3 — Network Interceptors (chain of responsibility)
 
-Simpler take on Topic 3's interceptor system. **One** protocol; each interceptor wraps `next`
+Simpler interceptor system (replaces the old 3-protocol chain). **One** protocol; each interceptor wraps `next`
 (Alamofire/OkHttp style). Auth, Retry (exponential backoff + jitter), Log. Interactive screen:
 tap a scenario → Run → see the chain's log lines.
 

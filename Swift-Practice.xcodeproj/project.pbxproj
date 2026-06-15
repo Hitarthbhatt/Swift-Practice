@@ -17,6 +17,7 @@
 				Topic1_UINavigation/CLAUDE.md,
 				Topic2_ConcurrencyBinding/CLAUDE.md,
 				Topic3_Networking/CLAUDE.md,
+				Topic3_Networking/Interceptors/CLAUDE.md,
 				Topic4_RealtimeNetworking/CLAUDE.md,
 				Topic5_DataRaces/CLAUDE.md,
 				Topic6_LRUCache/CLAUDE.md,
@@ -29,7 +30,6 @@
 				Topic12_VideoDownload/CLAUDE.md,
 				Topic13_DesignPatterns/CLAUDE.md,
 				Topic14_Testing/CLAUDE.md,
-				Topic15_NetworkInterceptors/CLAUDE.md,
 			);
 			target = 76F28A4F2F823EE2000BF1D3 /* Swift-Practice */;
 		};
